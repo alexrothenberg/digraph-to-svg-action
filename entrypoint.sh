@@ -1,5 +1,9 @@
 #!/bin/sh
-set -e
+set -exv
+
+which git
+echo `pwd`
+echo `ls`
 
 for f in **/*.dot
 do
