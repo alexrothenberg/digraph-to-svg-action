@@ -3,9 +3,20 @@ set -exv
 
 echo "In the digraph-to-svg action"
 
+pwd
+
+ls
+ls $GITHUB_WORKSPACE
+ls $RUNNER_WORKSPACE
+
 cd $GITHUB_WORKSPACE
 echo `set`
 echo $GITHUB_ACTOR
+
+
+ls
+pwd
+find .
 
 echo `find .`
 
