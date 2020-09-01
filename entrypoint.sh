@@ -1,10 +1,13 @@
 #!/bin/sh
 set -e
 
-dot -Tsvg images/documentation_signals.dot -o images/documentation_signals.svg
+for f in **/*.dot
+do
+  dot -Tsvg $f -o $f.svg
+done
 
 sh -c "git config --global user.name '${GITHUB_ACTOR}' \
       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
-      && git add -A && git commit -m '$*' --allow-empty \
+      && git add -A && git commit -m '$*' \
       && git push -u origin HEAD"
 
