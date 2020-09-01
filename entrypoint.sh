@@ -7,6 +7,8 @@ cd $GITHUB_WORKSPACE
 echo `set`
 echo $GITHUB_ACTOR
 
+echo `find .`
+
 for f in **/*.dot
 do
   echo $f
