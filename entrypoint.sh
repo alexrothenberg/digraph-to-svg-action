@@ -3,9 +3,9 @@ set -exv
 
 echo "In the digraph-to-svg action"
 
-echo $GITHUB_WORKSPACE
-
-set
+cd $GITHUB_WORKSPACE
+echo `set`
+echo $GITHUB_ACTOR
 
 for f in **/*.dot
 do
