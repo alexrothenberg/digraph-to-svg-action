@@ -1,9 +1,13 @@
 #!/bin/sh
 set -exv
 
+echo "hi"
 which git
+echo "hi2"
 echo `pwd`
+echo "hi3"
 echo `ls`
+echo "hi4"
 
 # for f in **/*.dot
 # do
