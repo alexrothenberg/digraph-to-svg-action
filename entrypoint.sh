@@ -9,9 +9,12 @@ echo `ls **/*.dot`
 
 for f in **/*.dot
 do
-  echo $f
+  echo begin $f
   dot -Tsvg $f -o $f.svg
+  echo done $f
 done
+
+echo "all files done"
 
 sh -c "git config --global user.name '${GITHUB_ACTOR}' \
       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
