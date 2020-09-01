@@ -15,11 +15,13 @@ do
 done
 
 echo "all files done"
+echo `find .`
+echo `git status`
 
-sh -c "git config --global user.name '${GITHUB_ACTOR}' \
-      && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
-      && git add -A && git commit -m '$*' \
-      && git push -u origin HEAD"
+# sh -c "git config --global user.name '${GITHUB_ACTOR}' \
+#       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
+#       && git add -A && git commit -m '$*' \
+#       && git push -u origin HEAD"
 
 
 # #!/bin/bash
