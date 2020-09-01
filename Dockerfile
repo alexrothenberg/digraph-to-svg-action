@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine/git:v2.26.2
 
 LABEL "name"="digraph-to-svg"
 LABEL "maintainer"="Alex Rothenberg <alex@alexrothenberg.com>"

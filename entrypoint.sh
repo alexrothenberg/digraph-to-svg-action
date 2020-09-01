@@ -1,6 +1,7 @@
 #!/bin/sh
 set -exv
 
+
 echo "hi"
 which git
 echo "hi2"
