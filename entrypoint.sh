@@ -5,6 +5,8 @@ echo "In the digraph-to-svg action"
 
 echo `find .`
 
+echo `ls **/*.dot`
+
 for f in **/*.dot
 do
   echo $f
