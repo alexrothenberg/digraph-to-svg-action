@@ -11,10 +11,8 @@ for f in **/*.dot
 do
   if [ -e "$f" ]
   then
-    echo begin $f
+    echo "Compiling $f into .svg"
     dot -Tsvg $f -o $f.svg
-    echo $f
-
   else
     echo "No dot files exist"
   fi
@@ -28,15 +26,16 @@ then
   git commit -m "action create .svg from .dot file"
   # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
   git push
+  echo "Pushing a commit to github"
 else
   echo "Nothing changed"
 fi
 
 
-echo "all files done"
-echo `find .`
-echo `git status`
-echo `git config --list`
+# echo "all files done"
+# echo `find .`
+# echo `git status`
+# echo `git config --list`
 
 # sh -c "git config --global user.name '${GITHUB_ACTOR}' \
 #       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
