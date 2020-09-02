@@ -9,14 +9,22 @@ echo `ls **/*.dot`
 
 for f in **/*.dot
 do
-  echo begin $f
-  dot -Tsvg $f -o $f.svg
-  echo done $f
+  if [ -e "$f" ]
+  then
+    echo begin $f
+    dot -Tsvg $f -o $f.svg
+    echo done $f
+  else
+    echo "files do not exist"
+  fi
+done
+
 done
 
 echo "all files done"
 echo `find .`
 echo `git status`
+echo `git config --list`
 
 # sh -c "git config --global user.name '${GITHUB_ACTOR}' \
 #       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com' \
