@@ -3,12 +3,13 @@ set -e
 
 function checkForDotFiles() {
   echo "::group::Checking for *.dot files"
-  for f in **/*.dot
+  for f in `find . -name "*.dot"`
   do
     if [ -e "$f" ]
     then
-      echo "Compiling $f into $f.svg"
-      dot -Tsvg $f -o $f.svg
+      svg_file=`echo $f | sed "s/\.dot/\.svg/"`
+      echo "Compiling $f into $svg_file"
+      dot -Tsvg $f -o $svg_file
     else
       echo "No dot files exist"
     fi
