@@ -17,18 +17,17 @@ function checkForDotFiles() {
 }
 
 function commitSvgFiles() {
-  echo "::group::Checking for *.dot files"
+  echo "::group::Commit new & changed .svg files"
   if [ -n "`git status -s`" ]
   then
     git config --local user.email "action@github.com"
     git config --local user.name "GitHub Action"
     git add -A
     git commit -m "action create .svg from .dot file"
-    # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
     git push
     echo "Pushing a commit to github"
   else
-    echo "No to commit"
+    echo "Nothing to commit"
   fi
   echo "::endgroup::"
 }
