@@ -14,10 +14,23 @@ do
     echo begin $f
     dot -Tsvg $f -o $f.svg
     echo $f
+
   else
-    echo "files do not exist"
+    echo "No dot files exist"
   fi
 done
+
+if [ -n $(git status -s) ]
+then
+  git config --local user.email "action@github.com"
+  git config --local user.name "GitHub Action"
+  git add -A
+  git commit -m "action create .svg from .dot file"
+  # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+  git push
+else
+  echo "Nothing changed"
+fi
 
 
 echo "all files done"
