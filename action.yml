@@ -1,5 +1,9 @@
 name: 'Compile .dot files'
 description: 'Compile .dot files into .svg files that can be viewed in a browser'
+inputs:
+  githubToken:
+    description: "GitHub Token"
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
