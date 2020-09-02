@@ -2,7 +2,7 @@
 set -e
 
 function checkForDotFiles() {
-  echo "::group Checking for *.dot files"
+  echo "::group::Checking for *.dot files"
   for f in **/*.dot
   do
     if [ -e "$f" ]
@@ -13,11 +13,11 @@ function checkForDotFiles() {
       echo "No dot files exist"
     fi
   done
-  echo "::endgroup"
+  echo "::endgroup::"
 }
 
 function commitSvgFiles() {
-  echo "::group Checking for *.dot files"
+  echo "::group::Checking for *.dot files"
   if [ -n "`git status -s`" ]
   then
     git config --local user.email "action@github.com"
@@ -30,7 +30,7 @@ function commitSvgFiles() {
   else
     echo "No to commit"
   fi
-  echo "::endgroup"
+  echo "::endgroup::"
 }
 
 checkForDotFiles
