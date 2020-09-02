@@ -13,13 +13,12 @@ do
   then
     echo begin $f
     dot -Tsvg $f -o $f.svg
-    echo done $f
+    echo $f
   else
     echo "files do not exist"
   fi
 done
 
-done
 
 echo "all files done"
 echo `find .`
