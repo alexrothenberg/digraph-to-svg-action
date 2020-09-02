@@ -20,7 +20,7 @@ do
   fi
 done
 
-if [ -n `git status -s` ]
+if [ -n "`git status -s`" ]
 then
   git config --local user.email "action@github.com"
   git config --local user.name "GitHub Action"
