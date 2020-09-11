@@ -1,7 +1,7 @@
 # Digraph to SVG Github Action
 
 Digraph to SVG runs [graphviz](https://graphviz.org/) to compile [DOT (graph description language)](<https://en.wikipedia.org/wiki/DOT_(graph_description_language)>) files which can be maintained by a person into svg
-files that can be displayed by a browser. 
+files that can be displayed by a browser.
 
 1. Install it as a [Github Action](https://github.com/features/actions)
 2. Check in a digraph dot file named with the `.dot` extension
@@ -27,7 +27,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Digraph to SVG step
         id: digraph_to_svg
-        uses: alexrothenberg/digraph-to-svg-action@v26
+        uses: alexrothenberg/digraph-to-svg-action@master
 ```
 
 When you create a pull request that adds or updates a `.dot` file like [example/graph.dot](example/graph.dot) the action will run and you'll see a new commit from `actions-user` in your pull adding [example/graph.svg](example/graph.svg) like

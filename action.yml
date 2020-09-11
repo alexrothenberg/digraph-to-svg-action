@@ -1,4 +1,4 @@
-name: 'Compile .dot files'
+name: 'Digraph to svg'
 description: 'Compile .dot files into .svg files that can be viewed in a browser'
 inputs:
   githubToken:
